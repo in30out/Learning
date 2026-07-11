@@ -5,7 +5,7 @@
 # 数据类型
 **数值类型、字符串类型、日期时间类型**
 ## 数据类型
-*无符号写 tinyint unsigned*
+**无符号写 tinyint unsigned**
 - TINYINT(1 byte)
 - SMALLINT(2 bytes)
 - MEDIUMINT(3 bytes)
