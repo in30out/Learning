@@ -14,6 +14,8 @@
 - FLOAT(4 bytes)
 - DOUBLE(8 bytes)
 - DECIMAL(依赖于M(精度)和D(标度)的值)
+	无符号数: tinyint unsigned
+	浮点数(以100.0 为最高):double([^1]4,[^2]1)
 
 
 ## 字符串类型
@@ -91,7 +93,36 @@ create table tb_user(
 ) comment '用户表';
 ```
 
+#### 修改
+##### 添加字段
+```
+ALTER TABLE 表名 ADD 字段名 类型(长度) [COMMENT 注释] [约束];
+```
+##### 修改字段
+```
+#修改数据类型
+ALTER TABLE 表名 MODIFY 字段名 新数据类型(长度);
+#修改字段名和字段类型
+ALTER TABLE 表名 CHANGE 旧字段名 新字段名 类型(长度) [COMMENT 注释] [约束];
+```
+##### 删除字段
+```
+ALTER TABLE 表名 DROP 字段名;
+```
+##### 修改表名
+```
+ALTER TABLE 表名 RENAME TO 新表名;
+```
+##### 删除表
+```
+#删除表
+DROP TABLE [IF EXISTS] 表名;
+#删除指定表，并重新创建该表
+TRUNCATE TABLE 表名;
+```
 
 
 
+[^1]: 精度:整体长度,如100.0有四位
 
+[^2]: 标度:小数位长度
